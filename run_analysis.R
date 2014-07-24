@@ -9,8 +9,7 @@
 ## - By default, Samsung data is expected to be in the working directory, unzipped ubder the folder "UCI HAR Dataset"
 ##     chanhe dataDir variable to pint to another folder
 ##
-## - The script produces 2 files - tity.csv as required in the cource assignment and  merged.csv as a temporary result 
-##     of steps 1-4
+## - The script produces tity.txt
 
 
 ## read, subset and normalize feature names
@@ -68,15 +67,15 @@ read.dataset <- function(directory, subname, features, activities) {
   message("reading data from [", file.path(directory, subname), "]", " ")
   
   ##X, Y and Subject
-  yData <- read.table(file.path(directory, "test", paste("y_", "test.txt", sep="")))
+  yData <- read.table(file.path(directory, subname, paste("y_", subname, ".txt", sep="")))
   names(yData) <- c("activityId")
   ## readable activity names by ID
   yData$activityName <- activities[yData$activityId,2]
   
-  sData <- read.table(file.path(directory, "test", paste("subject_", "test.txt", sep="")))
+  sData <- read.table(file.path(directory, subname, paste("subject_", subname, ".txt", sep="")))
   names(sData) <- c("subjectId")
   
-  xData <- read.table(file.path(directory, "test", paste("X_", "test.txt", sep="")))
+  xData <- read.table(file.path(directory, subname, paste("X_", subname, ".txt", sep="")))
   ##X for features only
   xData <- xData[,features$featureId]
   names(xData) <- features$featureName
@@ -102,9 +101,6 @@ testData <- read.dataset(dataDir, "test", features, activities)
 trainData <- read.dataset(dataDir, "train", features, activities)
 mergedData <- rbind(testData, trainData)
 
-message("saving merged ...")
-write.csv(file="merged.csv", mergedData)
-
 ################## AGGREGATE #############
 message("aggregating...")
 
@@ -119,7 +115,6 @@ aggrData = aggrData[,-c(1,2)]
 aggrData$activityName <- activities[aggrData$activityId,2]
 
 message("saving aggregated ...")
-write.csv(file="tidy.csv", aggrData)
+write.table(file="tidy.txt", aggrData, col.names=NA)
 
 message("done")
-
