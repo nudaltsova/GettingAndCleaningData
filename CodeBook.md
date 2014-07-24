@@ -11,7 +11,7 @@ performed on the raw data set to clean it up as per assignment requirements.
 Sections below do not describe data but only changes made, please refer to the original cook book for detailed description of data
 
 ## Transformations
-The target of the ercersise was to merge data from various files and data sets (merge both vertically and horizontally) and select a subset of features as per specified pattern; The resulting data set was then averaged by sme features
+The target of the exercise was to merge data from various files and data sets (merge both vertically and horizontally) and select a subset of features as per specified pattern; The resulting data set was then averaged by some features
 
 
 Detailed Steps:
@@ -24,13 +24,13 @@ Detailed Steps:
 
 4. Normalize activities names
 
-5. Read 'test' dataset: y_test -> activityId; subject_test -> subjectId; x_test -> feature measures
+5. Read the 'test' dataset: y_test -> activityId; subject_test -> subjectId; x_test -> feature measures
   
-6. Subset feature measures by feature name (see step 1)
+6. Subset feature measures by feature names (see step 1)
 
 7. Merge (vertically, cbind) y_test, activities, subject_test and subset of feature measures
 
-8. Repeat 5-7 for train dataset
+8. Repeat 5-7 for the 'train' dataset
 
 9. Merge (horizontally, rbind) test and train datasets
 
@@ -40,12 +40,12 @@ Detailed Steps:
 
 The following normalization was applied:
 
-* dash removed: **yy-X** -> to *yyX*
+* dash removed: **yy-X** ->  *yyX*
 
-* brackets removed: **yyy()** -> *yyy*
+* brackets removed: **yyy()** ->  *yyy*
 
-* duplicates removed: **YyyYyy** -> *Yyy*
+* duplicates removed: **YyyYyy** ->  *Yyy*
 
-* lowercasing: **YYY** -> *yyy*
-
+* lowercasing: **YYY** ->  *yyy*
+ 
 
