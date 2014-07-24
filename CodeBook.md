@@ -25,11 +25,11 @@ Detailed Steps:
 
 5. Read 'test' dataset:
 
-  * y_test -> activityId
+y_test -> activityId
   
-  * subject_test -> subjectId
+subject_test -> subjectId
   
-  * x_test -> feature measures
+x_test -> feature measures
   
 6. Subset feature measures by feature name (see step 1)
 
