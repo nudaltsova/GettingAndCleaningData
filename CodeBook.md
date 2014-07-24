@@ -8,7 +8,7 @@ performed on the raw data set to clean it up as per assignment requirements.
 
 * Original data code book : http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-Sections below do not describe data but only changes made, please refer to original cook book for detailed description of data
+Sections below do not describe data but only changes made, please refer to the original cook book for detailed description of data
 
 ## Transformations
 The target of the ercersise was to merge data from various files and data sets (merge both vertically and horizontally) and select a subset of features as per specified pattern; The resulting data set was then averaged by sme features
